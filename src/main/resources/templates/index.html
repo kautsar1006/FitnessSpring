@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+	crossorigin="anonymous">
+<title>Fitness</title>
+
+<style type="text/css">
+body {
+	background-image:
+		url("https://images7.alphacoders.com/473/thumb-1920-473181.jpg");
+	background-size: cover;
+}
+</style>
+</head>
+<body>
+	<div class="container">
+		<div align="center">
+			<h1 class="font-weight-bold text-monospace text-light">Fitness <span class="text-danger">List </span> </h1>
+			<a href="/new" class="btn btn-danger font-weight-bold">Create New Member</a> <br /> <br />
+			<table class="table" border="1" cellpadding="10">
+				<thead class="thead-dark">
+					<tr>
+						<th scope="col">Member ID</th>
+						<th scope="col">Member Name</th>
+						<th scope="col">Department</th>
+						<th scope="col">Date Register</th>
+						<th scope="col">Price</th>
+						<th scope="col">Actions</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="table-dark" th:each="fitness : ${listFitnessx}">
+						<td class="font-weight-bold text-dark" th:text="${fitness.id}">Member
+							ID</td>
+						<td class="font-weight-bold text-dark" th:text="${fitness.nama_peserta}">Member
+							Name</td>
+						<td class="font-weight-bold text-dark" th:text="${fitness.dept}">Department</td>
+						<td class="font-weight-bold text-dark" th:text="${fitness.tgl_pendaftaran}">Date
+							Register</td>
+						<td class="font-weight-bold text-dark" th:text="${fitness.biaya}">Price</td>
+
+						<td><a th:href="@{'/edit/'+ ${fitness.id}}"
+							class="btn btn-dark">Edit</a> &nbsp;&nbsp;&nbsp; <a
+							th:href="@{'/delete/' + ${fitness.id}}" class="btn btn-danger">Delete</a></td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+			integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+			crossorigin="anonymous"></script>
+		<script
+			src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+			integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+			crossorigin="anonymous"></script>
+		<script
+			src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+			integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+			crossorigin="anonymous"></script>
+
+	</div>
+</body>
+</html>
